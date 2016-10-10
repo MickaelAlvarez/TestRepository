@@ -27,6 +27,14 @@ public class ListFileNameParser {
             while (line != null) {
                 listFile.add(getDataFromLine(line));
             }
+
+            String test = "a";
+
+            switch (test) {
+                case "a":
+                    break;
+                default:
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
