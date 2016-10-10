@@ -10,43 +10,49 @@ import java.util.List;
 
 public class ListFileNameParser {
 
-	/*
-	 * commentaire
-	 */
+    /*
+     * commentaire
+     */
 
-	public static List<String> parse(File file) {
-		// This is a commentary 
-		ArrayList<String> listFile = new ArrayList<>(); // test
-		try {
-			BufferedReader br = new BufferedReader(new FileReader(file));
-			StringBuilder sb = new StringBuilder();
-			String line = br.readLine();
-			while (line != null) {
-				listFile.add(getDataFromLine(line));
-			}
+    public static List<String> parse(
+            File file
+    )
+    {
+        // This is a commentary 
+        ArrayList<String> listFile = new ArrayList<>(); // test
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+            while (line != null) {
+                listFile.add(getDataFromLine(line));
+            }
 
-			String test = "a";
+            String test = "a";
 
-			switch (test) {
-			case "a":
-				break;
-			default:
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return listFile;
-	}
+            switch (test) {
+                case "a":
+                    break;
+                default:
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return listFile;
+    }
 
-	/**
-	 * Javadoc
-	 * @param line
-	 * @return
-	 */
-	private static String getDataFromLine(String line) {
-		String[] lineSplitted = line.split("\\\t");
-		return lineSplitted[1];
-	}
+    /**
+     * Javadoc
+     * @param line
+     * @return
+     */
+    private static String getDataFromLine(
+            String line
+    )
+    {
+        String[] lineSplitted = line.split("\\\t");
+        return lineSplitted[1];
+    }
 }
