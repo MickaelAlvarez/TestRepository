@@ -8,12 +8,12 @@ client_profile_path = "profiles/client/profile.xml"
 refactor_jar = "refactor.jar"
 
 def srv_refactor(commit_msg=None):
-	refractor = get_root_directory() + hooks_folder + refactor_jar
+	refactor = get_root_directory() + hooks_folder + refactor_jar
 	srv_profile = get_root_directory() + hooks_folder + server_profile_path
 	folder = get_root_directory()
 
-	os.system("java -jar " + refractor + " " + srv_profile + " " + folder)
-	
+	#os.system("java -jar " + refractor + " " + srv_profile + " " + folder)
+	execute_cmd(["java", "-jar", refactor, srv_profile, folder], False)
 	#the rebased commit (if we have to)
 	if commit_msg :
 		git_add_all()
@@ -21,12 +21,12 @@ def srv_refactor(commit_msg=None):
 	
 	
 def user_refactor():
-	refractor = get_root_directory() + hooks_folder + refactor_jar
+	refactor = get_root_directory() + hooks_folder + refactor_jar
 	client_profile = get_root_directory() + hooks_folder + client_profile_path
 	folder = get_root_directory()
 
-	os.system("java -jar " + refractor + " " + client_profile + " " + folder)
-	
+	#os.system("java -jar " + refractor + " " + client_profile + " " + folder)
+	execute_cmd(["java", "-jar", refactor, client_profile, folder], False)
 	
 	#adding all refactored files
 	git_add_all()

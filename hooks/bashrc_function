@@ -7,8 +7,6 @@ function git ()
     for dir in "${indexed_dirs[@]}"; do 
         if [[ "$PWD" == *"$dir"* ]]; then
         
-            echo "customized git"
-            
             #python script for customized hooks
             python_script="hooks/hooks_main.py"
             

@@ -53,7 +53,6 @@ def add_directory_in_git_function(directory_path, file_str):
 					#add our directory into the list
 					new_line = line[:pos] + ", \"" + directory_path + "\"" + line[pos:]
 					#replace line by new_line
-					print("new_line : " + new_line)
 					bashrc[i] = new_line
 				return bashrc
 
